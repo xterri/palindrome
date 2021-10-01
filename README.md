@@ -4,11 +4,11 @@
 A palindrome is a sequence that reads the same backward as forward. (ie: racecar, 112211)
 
 Given a _string n_ representing an integer, return the closest integer (not including itself), which is a palindrome. 
-If there is a tie, return the smaller one.
+<br/>If there is a tie, return the smaller one.
 
 example:
-Input: n = "123"
-Output: "121"
+<br/>Input: n = "123"
+<br/>Output: "121"
 
 
 ### Assumptions
@@ -34,4 +34,4 @@ Output: "121"
 ### Process / TODO
 - Use `isNaN()` to determine if value is a number
 - Use `parseInt()` to determine if a value is an integer
-*Will need to handle any characters provided after a digit
+<br/>*Will need to handle any characters provided after a digit
