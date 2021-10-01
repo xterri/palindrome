@@ -1,5 +1,3 @@
-# Palindrome Coding Challenge
-
 ### The Problem
 A palindrome is a sequence that reads the same backward as forward. (ie: racecar, 112211)
 
