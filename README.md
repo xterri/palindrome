@@ -34,6 +34,7 @@ example:
 - If `n = "1234567890"` the function should `return "1234554321"`
 - If `n = "123 456 789"` the function should `return "123454321"`, omitting the whitespaces
 - If `n = "123,456,789"` the function should `return "123454321"`, omitting the commas
+- If `n = "12,3456,789"` the function should `return error`
 - If `n = "0123"` the function should `return "121"`; '0' will be omitted 
 - If `n = "+123"`, the function should `return "121"`; '+' will be removed from the string as it's unncessary to express positive integers
 - If `n = MIN_IN / MAX_INT` the function should `return null` because it will contain a characters and symbols
