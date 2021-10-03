@@ -17,11 +17,11 @@ example:
 - If `n = "12 34567 89"` the function should `return "123454321"`, omitting the whitespaces, take as a regular number
 - If `n = "123 456 789"` the function should `return "123454321"`, omitting the whitespaces
 - If `n = "123,456,789"` the function should `return "123454321"`, omitting the commas
-- If `n < 0` the function should `return "0" / null` because we cannot make negatives a true palindrome without a following minus symbol (ex. "-121" if it is a true palindrome should be "-121-")
+- If `n < 0` the function should `return null` because we cannot make negatives a true palindrome without a following minus symbol (ex. "-121" if it is a true palindrome should be "-121-")
 - If `n = MIN_VALUE / MAX_VALUE` the function should `return error` because it will contain a characters and symbols
-
 - If `n = "0"` the function should `return "1"` because we cannot include the value itself and 1 is the next closest integer that is a palindrome
 - If `n = "<any single digit>"` the function should `return "n - 1"` because it is the smaller integer closest to the value given
+
 - If `n = "10"` the function should `return "9"` 
 - If `n = "11"` the function should `return "9"` 
 - If `n = "16"` the function should `return "11"`; tie in distance between 11 and 22, return smaller value

@@ -23,4 +23,38 @@ function palindrome(n) {
 }
 
 
-palindrome("123");
+// palindrome("123");
+
+
+function addPalindrome(nbr, mid, length) {
+    for (let i = 0; i < mid; i++) {
+        if (nbr[i] !== nbr[length - i - 1]) {
+            const newNbr = (parseInt(nbr) + (10 ** i)).toString();
+            if (checkPalindrome(newNbr, mid)) return newNbr;
+            return addPalindrome(newNbr, mid, length);
+        }
+    }
+    return nbr;
+}
+
+function minusPalindrome(nbr, mid, length) {
+    for (let i = 0; i < mid; i++) {
+        if (nbr[i] !== nbr[length - i - 1]) {
+            const newNbr = (parseInt(nbr) - (10 ** i)).toString();
+            if (checkPalindrome(newNbr, mid)) return newNbr;
+            return minusPalindrome(newNbr, mid, length);
+        }
+    }
+    return nbr;
+}
+
+function checkPalindrome(n, mid) {
+    let nLen = n.length;
+    for (let i = 0; i < mid; i++) {
+        if (n[i] !== n[nLen - i - 1]) return false;
+    }
+    return true;
+}
+
+console.log(`addFinal: ${addPalindrome("0",0, 1)}`);
+console.log(`minusFinal: ${minusPalindrome("0", 0,1)}`);
