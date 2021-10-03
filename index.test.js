@@ -1,7 +1,7 @@
 const { checkIsNumber } = require('./helpers/checkIsNumber');
 
 function palindrome(n) {
-    if (!checkIsNumber) return "Error"
+    console.log(checkIsNumber(n));
 // Check if the value is a palindrome
     // If n <= 10
         // return (n - 1).toString()

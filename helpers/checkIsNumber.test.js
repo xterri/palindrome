@@ -1,30 +1,55 @@
 it("should return 'error' when given the number 1.23", () => {
-    expect(palindrome("1.23")).toEqual("Error: Value entered is not an integer")
+    expect(checkIsNumber("1.23")).toEqual("Error1: Value entered is not an integer")
 });
 
-it("should return '123' when given the number -123", () => {
-    expect(palindrome("-123")).toEqual("123")
+it("should return '0' when given the number -123", () => {
+    expect(checkIsNumber("-123")).toEqual("0")
 });
 
 it("should return '123' when given the number +123", () => {
-    expect(palindrome("+123")).toEqual("123")
+    expect(checkIsNumber("+123")).toEqual("123")
+});
+
+it("should return '123' when given the number 0123", () => {
+    expect(checkIsNumber("0123")).toEqual("123")
+});
+
+it("should return '123' when given the number +0123", () => {
+    expect(checkIsNumber("+0123")).toEqual("123")
 });
 
 it("should return '123456789' when given the number 123,456,789", () => {
-    expect(palindrome("123,456,789")).toEqual("123456789")
+    expect(checkIsNumber("123,456,789")).toEqual("123456789")
 });
 
-it("should return 'error' when given the number 12,34567,89", () => {
-    expect(palindrome("12,34567,89")).toEqual("Error: Not a valid integer")
+it("should return '123456789' when given the number 12,34567,89", () => {
+    expect(checkIsNumber("12,34567,89")).toEqual("123456789")
 });
 
+it("should return '123456789' when given the number 123 456 789", () => {
+    expect(checkIsNumber("123 456 789")).toEqual("123456789")
+});
+
+it("should return 'error' when given the number 12a34b56c89", () => {
+    expect(checkIsNumber("12a34b56c89")).toEqual("Error2: Value entered is not an integer")
+});
+
+it("should return 'error' when given the number 123456e89", () => {
+    expect(checkIsNumber("123456e89")).toEqual("Error2: Value entered is not an integer")
+});
+
+// Check that string n is an integer
 function checkIsNumber(n) {
-    // Check that string n is an integer
-    if (n.includes('.')) return "Error: Value entered is not an integer";
-    if (n[0].match(/[\+\-]/)) n = n.substring(1);
-    n = n.replace(/,/g,'').trim();
-    // Handle/remove "special" cases ('+ / -' only for beginning, whitespaces, ',')
-        // Handle negatives; if n < 0 - return '0' or null; n must be >= 0
-    // Run n.match(/^\d+$/) to determine if string contains only digits
-        // if returns null = string contains other values; return error - n is not an integer
+    // Check if there is a decimal point    
+    if (n.includes('.')) return "Error1: Value entered is not an integer";
+    // Check for '+' at n[0]; if so, remove '+'
+    if (n[0].match(/[\+]/)) n = n.substring(1);
+    // Remove ',' and whitespaces
+    n = n.replace(/[\s\,]/g,'').trim();
+
+    if (parseInt(n) < 0) return '0';
+    // Check if only digits are left in the string, returns null if characters found
+    if (!n.match(/^\d+$/)) return "Error2: Value entered is not an integer"; 
+
+    return parseInt(n).toString();
 }
