@@ -42,7 +42,7 @@ function palindrome(n) {
         let highPalindrome, lowPalindrome;
 
         // initial check if number given is already a palindrome
-        if (checkPalindrome(number, mid)) {
+        if (checkPalindrome(number)) {
             // 0 value return 1 b/c it can't be negative
             //if (number === '0') return '1';
             // single digits, return n - 1 

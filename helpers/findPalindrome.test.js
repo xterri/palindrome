@@ -62,4 +62,5 @@ function checkPalindrome(nbr) {
         if (nbr[i] !== nbr[length - i - 1]) return false;
     }
     return true;
+    // return nbr === nbr.split('').reverse().join('');
 }

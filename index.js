@@ -8,20 +8,23 @@ function palindrome(n) {
         const mid = Math.floor(number.length / 2);
         let highPalindrome, lowPalindrome;
 
-        if (checkPalindrome(number, mid)) {
+        if (checkPalindrome(number)) {
             if (number <= 11) {
-                highPalindrome = addPalindrome((parseInt(number) + 1).toString(), mid, length);
-                lowPalindrome = minusPalindrome((parseInt(number) - 1).toString(), mid, length);
+                highPalindrome = addPalindrome((parseInt(number) + 1).toString());
+                lowPalindrome = minusPalindrome((parseInt(number) - 1).toString());
             } else {
-                highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString(), mid, length);
-                lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString(), mid, length);
+                highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString());
+                lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString());
             }
         } else {
-            highPalindrome = addPalindrome(number, mid, length);
-            lowPalindrome = minusPalindrome(number, mid, length);  
+            highPalindrome = addPalindrome(number);
+            lowPalindrome = minusPalindrome(number);  
         }
 
-        return (highPalindrome - number) < (number - lowPalindrome) ? highPalindrome : lowPalindrome;
+        return lowPalindrome ? 
+            (highPalindrome - number) < (number - lowPalindrome) ? 
+            highPalindrome : lowPalindrome 
+            : highPalindrome;    
     }
     return number;
 }
