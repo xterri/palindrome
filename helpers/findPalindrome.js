@@ -1,5 +1,5 @@
 /*
-** Functions to find the next palindrome from given number
+** Functions to check & find the next palindrome from given number
 ** Search by adding and subtracting 1x to number
 ** Check if new number is a palindrome, if so return the number, else continue
 */

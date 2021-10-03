@@ -1,3 +1,7 @@
+/*
+** Finds the next closest integer palindrome from string n
+*/
+
 const { checkIsNumber } = require('./helpers/checkIsNumber');
 const { addPalindrome, minusPalindrome, checkPalindrome } = require('./helpers/findPalindrome');
 
@@ -27,4 +31,9 @@ function palindrome(n) {
             : highPalindrome;    
     }
     return number;
+}
+
+
+module.exports = {
+    palindrome
 }
