@@ -29,6 +29,7 @@ it("should return null when given the number -123", () => {
 
 
 const { checkIsNumber } = require('./helpers/checkIsNumber');
+const { addPalindrome, minusPalindrome, checkPalindrome } = require('./helpers/findPalindrome');
 
 function palindrome(n) {
 // Confirm / convert n to string if not entered in as a string
@@ -36,8 +37,8 @@ function palindrome(n) {
     
     // continue if number returned contains value & does not contain "Error"
     if (number && !number.includes('Error')) {
-        const length = number.length;
-        const mid = Math.floor(length / 2);
+        // const length = number.length; // calculate length in functions as it could change
+        const mid = Math.floor(number.length / 2);
         let highPalindrome, lowPalindrome;
 
         // initial check if number given is already a palindrome
@@ -49,58 +50,28 @@ function palindrome(n) {
             // single digits up to 11 is an exception because we need to +/-1 from it
             if (number <= 11) {
                 // find the highest and lowest palindrome by adding/substracting 1x each time
-                highPalindrome = addPalindrome((parseInt(number) + 1).toString(), mid, length);
-                lowPalindrome = minusPalindrome((parseInt(number) - 1).toString(), mid, length);
+                highPalindrome = addPalindrome((parseInt(number) + 1).toString());
+                lowPalindrome = minusPalindrome((parseInt(number) - 1).toString());
             } else {
                 // +/- 1x to midpoint floor
-                highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString(), mid, length);
-                lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString(), mid, length);
+                highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString());
+                lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString());
             }
         } else {
-            highPalindrome = addPalindrome(number, mid, length);
-            lowPalindrome = minusPalindrome(number, mid, length);  
+            highPalindrome = addPalindrome(number);
+            lowPalindrome = minusPalindrome(number);  
         }
 
-        // compare high and low palindrome to n; return whichever palindrome has less 
-        return (highPalindrome - number) < (number - lowPalindrome) ? highPalindrome : lowPalindrome;
+        console.log(`high: ${highPalindrome}\tlow: ${lowPalindrome}`);
+        // check if lowPalindrome returns null; will read '0' because it's a string
+        // if lowPalindrome is true, compare high and low palindrome to n; return whichever palindrome has less 
+            // else return highPalindrome
+        return lowPalindrome ? 
+            (highPalindrome - number) < (number - lowPalindrome) ? 
+            highPalindrome : lowPalindrome 
+            : highPalindrome;
     }
 
     // return error msgs / null 
     return number;
-}
-// Apply recursive function for a forward and backward count to find next high and low palindrome
-function addPalindrome(nbr, mid, length) {
-    // Work outwards in, compare if they match
-    for (let i = 0; i < mid; i++) {
-        if (nbr[i] !== nbr[length - i - 1]) {
-        // if it doesn't, + / - to the number and repeat
-            const newNbr = (parseInt(nbr) + (10 ** i)).toString();
-            if (checkPalindrome(newNbr, mid)) return newNbr;
-            return addPalindrome(newNbr, mid, length);
-        }
-        // if it matches, move to next digits
-    }
-    return nbr;
-}
-
-function minusPalindrome(nbr, mid, length) {
-    // check if value provided is > 0
-    if (parseInt(nbr) < 0) return '1'
-    for (let i = 0; i < mid; i++) {
-        if (nbr[i] !== nbr[length - i - 1]) {
-            const newNbr = (parseInt(nbr) - (10 ** i)).toString();
-            if (checkPalindrome(newNbr, mid)) return newNbr;
-            return minusPalindrome(newNbr, mid, length);
-        }
-    }
-    return nbr;
-}
-
-function checkPalindrome(nbr, mid) {
-    // keep nLen in case change length from original (ex. double to single)
-    let nLen = nbr.length;
-    for (let i = 0; i < mid; i++) {
-        if (nbr[i] !== nbr[nLen - i - 1]) return false;
-    }
-    return true;
 }

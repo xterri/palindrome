@@ -27,6 +27,7 @@ example:
 - If `n = "16"` the function should `return "11"`; tie in distance between 11 and 22, return smaller value
 - If `n = "19"` the function should `return "22"`; 22 is closer to the value than 11
 - If `n = "22"` the function should `return "11"`
+- If `n = "99"` the function should `return "101"`
 - If `n = "118"` the function should `return "121"`
 - If `n = "123"` the function should `return "121"`
 - If `n = "222"` the function should `return "212"`
