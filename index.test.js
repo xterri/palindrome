@@ -1,7 +1,17 @@
+it("should return '123' when given the number 123", () => {
+    expect(palindrome(123)).toEqual("123")
+});
+
+it("should return '123' when given the number 123", () => {
+    expect(palindrome('123')).toEqual("123")
+});
+
+
 const { checkIsNumber } = require('./helpers/checkIsNumber');
 
 function palindrome(n) {
-    console.log(checkIsNumber(n));
+// Confirm / convert n to string if not entered in as a string
+    if (typeof n === 'number') n = n.toString();
 // Check if the value is a palindrome
     // If n <= 10
         // return (n - 1).toString()
@@ -19,7 +29,7 @@ function palindrome(n) {
                     // TODO / Solve
         // compare high and low palindrome to n
         // return whichever palindrome has less 
-    return n
+    return checkIsNumber(n);
 }
 
 function palindromeTest(n) {
