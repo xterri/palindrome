@@ -11,17 +11,17 @@ example:
 <br/>Output: "121"
 
 
-### Assumptions
+### Assumptions / Tests
 - If `n = "1.23"` the function should `return error` as the value is not an integer
 - If `n = "1a2e3b4"` the function should `return error` as the value is not an integer
-- If `n < 0` the function should `return null` because we cannot make negatives a true palindrome without a following minus symbol (ex. "-121" if it is a true palindrome should be "-121-")
-- If `n = MIN_VALUE / MAX_VALUE` the function should `return error` because it will contain a characters and symbols
-- If `n = "0123"` the function should `return "121"`; '0' will be omitted 
+- If `n < 0` the function should `return null` because we cannot make negatives a true palindrome without a following minus symbol (ex. "-121" should be "-121-")
+- If `n = MIN_VALUE / MAX_VALUE` the function should `return error` because it will contain a decimal point and/or characters/symbols
+- If `n = "0123"` the function should `return "121"`; '0' will be omitted when used with parseInt()
 - If `n = "+123"`, the function should `return "121"`; '+' will be removed from the string as it's unncessary to express positive integers
 - If `n = "12 34567 89"` the function should `return "123454321"`, omitting the whitespaces, take as a regular number
 - If `n = "123 456 789"` the function should `return "123454321"`, omitting the whitespaces
 - If `n = "123,456,789"` the function should `return "123454321"`, omitting the commas
-- If `n = "0"` the function should `return "1"` because we cannot include the value itself and 1 is the next closest integer that is a palindrome
+- If `n = "0"` the function should `return "1"` because we cannot return negatives or the value itself
 - If `n = "<any single digit>"` the function should `return "n - 1"` because it is the smaller integer closest to the value given
 - If `n = "10"` the function should `return "9"` 
 - If `n = "11"` the function should `return "9"` 
@@ -39,11 +39,12 @@ example:
 - If `n = "1234567890"` the function should `return "1234554321"`
 
 ### Process / TODO
-- Solve distance between closest and furthest palindrome to _n_
+- Find distance between next highest and lowest palindrome to _n_
 - Combine addPalindrome and minusPalindrome into one function for recursion?
 
 ### Issues
 - How to handle commas if _n_ is using them in a non-standard way (ex. "12,34567,89") or if user is using commas as a decimal separator (ex. 1,23)?
+- What should happen if a positive value produces an 'exponent' as it's number? (ex. 10e5)
 
 ### Failed Tests
 - If `n = "99"` the function should `return "101"` (returned _88_)
