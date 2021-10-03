@@ -3,9 +3,17 @@ it("should return next highest palindrome, '131' when given 123", () => {
     expect(addPalindrome("123")).toEqual("131")
 });
 
+it("should return next highest palindrome, '101' when given 100", () => {
+    expect(addPalindrome("100")).toEqual("101")
+});
+
 // minusPalindrome Tests
 it("should return next lowest palindrome '121' when given 123", () => {
     expect(minusPalindrome("123")).toEqual("121")
+});
+
+it("should return next lowest palindrome '88' when given 98", () => {
+    expect(minusPalindrome("98")).toEqual("88")
 });
 
 // checkPalindrome Tests
@@ -23,6 +31,7 @@ function addPalindrome(nbr) {
     const length = nbr.length;
     const mid = Math.floor(length / 2);
 
+    // TODO: check if value reaches an exponent? (ex. 10e5); return error
     // Work outwards in, compare if they match
     for (let i = 0; i < mid; i++) {
         if (nbr[i] !== nbr[length - i - 1]) {
@@ -33,7 +42,8 @@ function addPalindrome(nbr) {
         }
         // if it matches, move to next digits
     }
-    return nbr;
+    // what to return? null? nbr? 
+    return null;
 }
 
 function minusPalindrome(nbr) {
@@ -50,11 +60,16 @@ function minusPalindrome(nbr) {
             return minusPalindrome(newNbr);
         }
     }
-    return nbr;
+    return null;
 }
 
+// TODO: Can you combine addPalindrome and minusPalindrome in one function for recursion?
+
 function checkPalindrome(nbr) {
-    // keep nLen in case change length from original (ex. double to single)
+    return nbr === nbr.split('').reverse().join('');
+    
+    /*
+    // keep length in case nbr length changes from original (ex. 99 > 101)
     const length = nbr.length;
     const mid = Math.floor(length / 2);
 
@@ -62,5 +77,5 @@ function checkPalindrome(nbr) {
         if (nbr[i] !== nbr[length - i - 1]) return false;
     }
     return true;
-    // return nbr === nbr.split('').reverse().join('');
+    */
 }

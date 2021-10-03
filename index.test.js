@@ -15,11 +15,11 @@ it("should return 0 when given the number 1", () => {
     expect(palindrome("1")).toEqual("0")
 });
 
-it("should return '123' when given the number 0123", () => {
+it("should return '121' when given the number 0123", () => {
     expect(palindrome("0123")).toEqual("121")
 });
 
-it("should return '123' when given the number +0123", () => {
+it("should return '121' when given the number +0123", () => {
     expect(palindrome("+0123")).toEqual("121")
 });
 
@@ -39,7 +39,7 @@ function palindrome(n) {
     if (number && !number.includes('Error')) {
         // const length = number.length; // calculate length in functions as it could change
         const mid = Math.floor(number.length / 2);
-        let highPalindrome, lowPalindrome;
+        let addNewNumber = number, minusNewNumber = number;
 
         // initial check if number given is already a palindrome
         if (checkPalindrome(number)) {
@@ -49,20 +49,24 @@ function palindrome(n) {
                 // if (number < 10) return (number - 1).toString();
             // single digits up to 11 is an exception because we need to +/-1 from it
             if (number <= 11) {
+                addNewNumber = parseInt(number) + 1;
+                minusNewNumber = parseInt(number) - 1;
                 // find the highest and lowest palindrome by adding/substracting 1x each time
-                highPalindrome = addPalindrome((parseInt(number) + 1).toString());
-                lowPalindrome = minusPalindrome((parseInt(number) - 1).toString());
+                    // highPalindrome = addPalindrome((parseInt(number) + 1).toString());
+                    // lowPalindrome = minusPalindrome((parseInt(number) - 1).toString());
             } else {
                 // +/- 1x to midpoint floor
-                highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString());
-                lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString());
+                addNewNumber = parseInt(number) + (10 ** mid);
+                minusNewNumber = parseInt(number) - (10 ** mid);
+                // highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString());
+                // lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString());
             }
-        } else {
-            highPalindrome = addPalindrome(number);
-            lowPalindrome = minusPalindrome(number);  
-        }
+        } 
 
-        console.log(`high: ${highPalindrome}\tlow: ${lowPalindrome}`);
+        const highPalindrome = addPalindrome(addNewNumber.toString());
+        const lowPalindrome = minusPalindrome(minusNewNumber.toString());  
+
+        // console.log(`high: ${highPalindrome}\tlow: ${lowPalindrome}`);
         // check if lowPalindrome returns null; will read '0' because it's a string
         // if lowPalindrome is true, compare high and low palindrome to n; return whichever palindrome has less 
             // else return highPalindrome

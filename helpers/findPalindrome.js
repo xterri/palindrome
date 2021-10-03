@@ -34,13 +34,7 @@ function minusPalindrome(nbr) {
 }
 
 function checkPalindrome(nbr) {
-    const length = nbr.length;
-    const mid = Math.floor(length / 2);
-    
-    for (let i = 0; i < mid; i++) {
-        if (nbr[i] !== nbr[length - i - 1]) return false;
-    }
-    return true;
+    return nbr === nbr.split('').reverse().join('');
 }
 
 module.exports = {

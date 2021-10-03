@@ -5,8 +5,8 @@
 function checkIsNumber(n) {
     if (typeof n === 'number') n = n.toString();
     if (n.includes('.')) return "Error: Value contains a decimal point";
-    if (n[0].match(/[\+]/)) n = n.substring(1);
-    n = n.replace(/[\s\,]/g,'').trim();
+    if (n[0].includes('+')) n = n.substring(1);
+    n = n.replace(/[\s\,]/g,'');
 
     if (parseInt(n) < 0) return null;
     if (!n.match(/^\d+$/)) return "Error: Value contains characters / symbols"; 

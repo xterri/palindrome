@@ -49,9 +49,9 @@ function checkIsNumber(n) {
     // Check if there is a decimal point    
     if (n.includes('.')) return "Error: Value contains a decimal point";
     // Check for '+' at n[0]; if so, remove '+'
-    if (n[0].match(/[\+]/)) n = n.substring(1);
+    if (n[0].includes('+')) n = n.substring(1);
     // Remove ',' and whitespaces
-    n = n.replace(/[\s\,]/g,'').trim();
+    n = n.replace(/[\s\,]/g,'');
 
     // Account for negative values here
     if (parseInt(n) < 0) return null;

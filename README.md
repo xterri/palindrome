@@ -32,6 +32,7 @@ example:
 - If `n = "123"` the function should `return "121"`
 - If `n = "222"` the function should `return "212"`
 - If `n = "343"` the function should `return "333"`
+- If `n = "999"` the function should `return "1001"`
 - If `n = "1166"` the function should `return "1111"`
 - If `n = "1167"` the function should `return "1221"`
 - If `n = "8393"` the function should `return "8338"`
@@ -44,7 +45,7 @@ example:
 
 ### Process / TODO
 - Solve distance between closest and furthest palindrome to _n_
-- 2 Linear Searches? Count forward and backwards?
+- Combine addPalindrome and minusPalindrome into one function for recursion?
 
 
 ### Issues

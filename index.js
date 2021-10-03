@@ -6,21 +6,21 @@ function palindrome(n) {
     
     if (number && !number.includes('Error')) {
         const mid = Math.floor(number.length / 2);
-        let highPalindrome, lowPalindrome;
+        let addNewNumber = number, minusNewNumber = number;
 
         if (checkPalindrome(number)) {
             if (number <= 11) {
-                highPalindrome = addPalindrome((parseInt(number) + 1).toString());
-                lowPalindrome = minusPalindrome((parseInt(number) - 1).toString());
+                addNewNumber = parseInt(number) + 1;
+                minusNewNumber = parseInt(number) - 1;
             } else {
-                highPalindrome = addPalindrome((parseInt(number) + (10 ** mid)).toString());
-                lowPalindrome = minusPalindrome((parseInt(number) - (10 ** mid)).toString());
+                addNewNumber = parseInt(number) + (10 ** mid);
+                minusNewNumber = parseInt(number) - (10 ** mid);
             }
-        } else {
-            highPalindrome = addPalindrome(number);
-            lowPalindrome = minusPalindrome(number);  
         }
 
+        const highPalindrome = addPalindrome(addNewNumber.toString());
+        const lowPalindrome = minusPalindrome(minusNewNumber.toString());  
+    
         return lowPalindrome ? 
             (highPalindrome - number) < (number - lowPalindrome) ? 
             highPalindrome : lowPalindrome 
@@ -28,5 +28,3 @@ function palindrome(n) {
     }
     return number;
 }
-
-console.log(palindrome(99))
