@@ -5,16 +5,16 @@ const prompt = require('prompt-sync')();
 const nbr = prompt('Enter a number: ');
 
 let i = 10;
-console.log(`Palindrome 1 Results: ${palindrome(nbr)}`);
-console.log(`Palindrome 2 Results: ${palindrome(nbr, 'b')}\n`);
+console.log(`Palindrome A Results: ${palindrome(nbr)}`);
+console.log(`Palindrome B Results: ${palindrome(nbr, 'b')}\n`);
 
 while (i--) {
-    console.time('1. palindrome1');
+    console.time('A. Palindrome A');
     palindrome(nbr);
-    console.timeEnd('1. palindrome1');
+    console.timeEnd('A. Palindrome A');
 
-    console.time('2. palindrome2');
+    console.time('B. Palindrome B');
     palindrome(nbr, 'b');
-    console.timeEnd('2. palindrome2');
+    console.timeEnd('B. Palindrome B');
     console.log('\n')
 }

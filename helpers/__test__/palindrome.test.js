@@ -1,4 +1,4 @@
-const { palindrome } = require('./palindrome.js');
+const { palindrome } = require('../palindrome.js');
 
 // Tests for Invalid Inputs (characters, symbols, decimals, negatives)
 it("should return error when given the number 1.23", () => {

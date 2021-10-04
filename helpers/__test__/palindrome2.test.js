@@ -1,4 +1,4 @@
-const { palindrome } = require('./palindrome.js');
+const { palindrome } = require('../palindrome.js');
 
 // FAILED TESTS
 /*
@@ -20,8 +20,9 @@ it("should return 999 when given the number 1001", () => {
 
 it("should return 9999 when given the number 10001", () => {
     expect(palindrome("10001", 'b')).toEqual('9999')
-}); 
-*/
+});
+*/ 
+
 
 
 // Tests for Invalid Inputs (characters, symbols, decimals, negatives)

@@ -1,5 +1,5 @@
 const { checkIsNumber } = require('../helpers/checkIsNumber');
-const { addPalindrome, minusPalindrome, checkPalindrome } = require('../helpers/findPalindrome');
+const { findUpperPalindrome, findLowerPalindrome, checkPalindrome } = require('../helpers/findPalindrome');
 
 function palindrome(n) {
 // Confirm / convert n to string if not entered in as a string
@@ -16,8 +16,8 @@ function palindrome(n) {
             minusNewNumber -= 1;
         } 
 
-        const highPalindrome = addPalindrome(addNewNumber.toString());
-        const lowPalindrome = minusPalindrome(minusNewNumber.toString());  
+        const highPalindrome = findUpperPalindrome(addNewNumber.toString());
+        const lowPalindrome = findLowerPalindrome(minusNewNumber.toString());  
 
         // if both low and high is not empty
         if (lowPalindrome && highPalindrome)

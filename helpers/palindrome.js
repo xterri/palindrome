@@ -4,12 +4,12 @@
 
 const { checkIsNumber } = require('./checkIsNumber');
 const { 
-    addPalindrome,
-    minusPalindrome, 
+    findUpperPalindrome,
+    findLowerPalindrome, 
     checkPalindrome,
-    bAddPalindrome,
-    bMinusPalindrome
  } = require('./findPalindrome');
+ 
+const { testUpperPalindrome, testLowerPalindrome } = require('./__test__/testAlgorithm');
 
 function palindrome(n, option = 'a') {
     const numberString = checkIsNumber(n);
@@ -24,11 +24,11 @@ function palindrome(n, option = 'a') {
         }
 
         if (option === 'a') {
-            highPalindrome = addPalindrome(addNewNumber.toString());
-            lowPalindrome = minusPalindrome(minusNewNumber.toString());  
+            highPalindrome = findUpperPalindrome(addNewNumber.toString());
+            lowPalindrome = findLowerPalindrome(minusNewNumber.toString());  
         } else {
-            highPalindrome = bAddPalindrome(addNewNumber.toString());
-            lowPalindrome = bMinusPalindrome(minusNewNumber.toString());
+            highPalindrome = testUpperPalindrome(addNewNumber.toString());
+            lowPalindrome = testLowerPalindrome(minusNewNumber.toString());
         }
 
         if (lowPalindrome && highPalindrome) 

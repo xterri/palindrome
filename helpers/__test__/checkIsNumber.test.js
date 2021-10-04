@@ -1,4 +1,4 @@
-const { checkIsNumber } = require('./checkIsNumber');
+const { checkIsNumber } = require('../checkIsNumber');
 
 it("should return 'error' when given the number 1.23", () => {
     expect(checkIsNumber("1.23")).toEqual("Error: Value contains a decimal point")
