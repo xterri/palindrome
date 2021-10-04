@@ -37,19 +37,17 @@ example:
 - If `n = "8393"` the function should `return "8338"`
 - If `n = "8394"` the function should `return "8448"`
 - If `n = "1234567890"` the function should `return "1234554321"`
+- If `n = "99"` the function should `return "101"`
+- If `n = "999"` the function should `return "1001"`
+- If `n = "899 998"` the function should `return "900009"`
+- If `n = "800 008"` the function should `return "799997"`
 
 ### Process / TODO
-- Find distance between next highest and lowest palindrome to _n_
+- ~Find distance between next highest and lowest palindrome to _n_~
 - Combine addPalindrome and minusPalindrome into one function for recursion?
 - Apply try/catch clauses
-- Fix failed tests, adjusted values exceeding other palindromes
+- ~Fix failed tests, adjusted values exceeding other palindromes~
 
 ### Issues
 - How to handle commas if _n_ is using them in a non-standard way (ex. "12,34567,89") or if user is using commas as a decimal separator (ex. 1,23)?
-- What should happen if a positive value produces an 'exponent' as it's number? (ex. 10e5)
-
-### Failed Tests
-- If `n = "99"` the function should `return "101"` (returned _88_)
-- If `n = "999"` the function should `return "1001"` (returned _989_)
-- If `n = "899 998"` the function should `return "900009"` (returned _898898_)
-- If `n = "800 008"` the function should `return "799997"` (returned _801108_)
+- ~What should happen if a positive value produces an 'exponent' as it's number? (ex. 10e5)~ Accounting for MAX_SAFE_INTEGER
