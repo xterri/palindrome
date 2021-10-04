@@ -30,10 +30,11 @@ it("should return false when given the number 1321", () => {
 
 // Apply recursive function for a forward and backward count to find next high and low palindrome
 function addPalindrome(nbr) {
+    if (nbr > Number.MAX_SAFE_INTEGER) return null;
+
     const length = nbr.length;
     const mid = Math.floor(length / 2);
 
-    // TODO: check if value reaches an exponent? (ex. 10e5); return error
     // Work outwards in, compare if they match
     for (let i = 0; i < mid; i++) {
         if (nbr[i] !== nbr[length - i - 1]) {
@@ -45,16 +46,17 @@ function addPalindrome(nbr) {
         // if it matches, move to next digits
     }
     // what to return? null? nbr? 
-    return null;
+    return nbr;
 }
 
 function minusPalindrome(nbr) {
+    // check if value provided is > 0
+        // can't return null, 0 or -nbr; will be considered lowest value
+    if (nbr < 0) return null; 
+
     const length = nbr.length;
     const mid = Math.floor(length / 2);
 
-    // check if value provided is > 0
-        // can't return null, 0 or -nbr; will be considered lowest value
-    if (parseInt(nbr) < 0) return null
     for (let i = 0; i < mid; i++) {
         if (nbr[i] !== nbr[length - i - 1]) {
             const newNbr = (parseInt(nbr) - (10 ** i)).toString();
@@ -62,7 +64,7 @@ function minusPalindrome(nbr) {
             return minusPalindrome(newNbr);
         }
     }
-    return null;
+    return nbr;
 }
 
 // TODO: Can you combine addPalindrome and minusPalindrome in one function for recursion?

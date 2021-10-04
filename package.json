@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "jest",
-    "start": "node index.js"
+    "start": "node timeTest.js"
   },
   "author": "",
   "license": "ISC"

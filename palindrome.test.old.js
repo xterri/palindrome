@@ -48,26 +48,23 @@ function palindrome(n) {
 
         // initial check if number given is already a palindrome
         if (checkPalindrome(numberString)) {
-            // if any value <= 900, add only 1 to the numberValue to avoid overshooting and missing any palindromes
-            if (numberString.length < 4) {
-                addNewNumber += 1;
-                minusNewNumber -= 1;
-            } else {
-                addNewNumber += 11;
-                minusNewNumber -= 11;
-            }
+            // +1 / -1 to number will provide accurate results beacuse going by 1, but slow on time?
+                // compared to old code, this method seems to have a similar average completion time
+            addNewNumber += 1;
+            minusNewNumber -= 1;
         } 
 
         const highPalindrome = addPalindrome(addNewNumber.toString());
         const lowPalindrome = minusPalindrome(minusNewNumber.toString());  
 
-        // check if lowPalindrome returns null; will read '0' because it's a string
-        // if lowPalindrome is true, compare high and low palindrome to n; return whichever palindrome has less 
-            // else return highPalindrome
-        return lowPalindrome ? 
-            (highPalindrome - numberString) < (numberString - lowPalindrome) ? 
-            highPalindrome : lowPalindrome 
-            : highPalindrome;
+        // if both low and high is not empty
+        if (lowPalindrome && highPalindrome)
+        // compare high and low palindrome to n; return whichever palindrome is lesser
+            return (highPalindrome - numberString) < (numberString - lowPalindrome) ? highPalindrome : lowPalindrome;
+        
+        // check if low or high returns null; will read '0' because it's a string
+        // whichever has a value or considered 'true' will be returned
+        return lowPalindrome || highPalindrome; 
     }
 
     // return error msgs / null 

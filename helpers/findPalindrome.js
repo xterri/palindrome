@@ -5,6 +5,8 @@
 */
 
 function addPalindrome(nbr) {
+    if (nbr > Number.MAX_SAFE_INTEGER) return null;
+
     const length = nbr.length;
     const mid = Math.floor(length / 2);
 
@@ -19,10 +21,11 @@ function addPalindrome(nbr) {
 }
 
 function minusPalindrome(nbr) {
+    if (nbr < 0) return null;
+
     const length = nbr.length;
     const mid = Math.floor(length / 2);
 
-    if (parseInt(nbr) < 0) return null;
     for (let i = 0; i < mid; i++) {
         if (nbr[i] !== nbr[length - i - 1]) {
             const newNbr = (parseInt(nbr) - (10 ** i)).toString();

@@ -7,10 +7,9 @@ const { addPalindrome, minusPalindrome, checkPalindrome } = require('./helpers/f
 
 function palindrome(n) {
     const numberString = checkIsNumber(n);
-    
+
     if (numberString && !numberString.includes('Error')) {
         let addNewNumber = minusNewNumber = parseInt(numberString);
-
         if (checkPalindrome(numberString)) {
             addNewNumber += 1;
             minusNewNumber -= 1;
@@ -19,10 +18,9 @@ function palindrome(n) {
         const highPalindrome = addPalindrome(addNewNumber.toString());
         const lowPalindrome = minusPalindrome(minusNewNumber.toString());  
 
-        return lowPalindrome ? 
-            (highPalindrome - numberString) < (numberString - lowPalindrome) ? 
-            highPalindrome : lowPalindrome 
-            : highPalindrome;    
+        if (lowPalindrome && highPalindrome) 
+            return (highPalindrome - numberString) < (numberString - lowPalindrome) ? highPalindrome : lowPalindrome;
+        return lowPalindrome || highPalindrome;   
     }
     return numberString;
 }

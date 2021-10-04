@@ -1,6 +1,5 @@
 const { palindrome } = require('./palindrome.js');
 
-
 // Tests for Invalid Inputs (characters, symbols, decimals, negatives)
 it("should return error when given the number 1.23", () => {
     expect(palindrome("1.23")).toEqual("Error: Value contains a decimal point")
@@ -19,7 +18,15 @@ it("should return error when given Number.MIN_VALUE", () => {
 });
 
 it("should return error when given Number.MAX_VALUE", () => {
-    expect(palindrome(Number.MAX_VALUE)).toEqual("Error: Value contains a decimal point")
+    expect(palindrome(Number.MAX_VALUE)).toEqual("Error: Value exceeds MAX/MIN integer")
+});
+
+it("should return '9007199229917009' when given the number Number.MAX_SAFE_INTEGER - 1", () => {
+    expect(palindrome(Number.MAX_SAFE_INTEGER - 1)).toEqual("9007199229917009")
+});
+
+it("should return '9007199229917009' when given the number Number.MAX_SAFE_INTEGER", () => {
+    expect(palindrome(Number.MAX_SAFE_INTEGER)).toEqual("9007199229917009")
 });
 
 
