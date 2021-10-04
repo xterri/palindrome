@@ -41,6 +41,8 @@ example:
 ### Process / TODO
 - Find distance between next highest and lowest palindrome to _n_
 - Combine addPalindrome and minusPalindrome into one function for recursion?
+- Apply try/catch clauses
+- Fix failed tests, adjusted values exceeding other palindromes
 
 ### Issues
 - How to handle commas if _n_ is using them in a non-standard way (ex. "12,34567,89") or if user is using commas as a decimal separator (ex. 1,23)?
@@ -50,3 +52,4 @@ example:
 - If `n = "99"` the function should `return "101"` (returned _88_)
 - If `n = "999"` the function should `return "1001"` (returned _989_)
 - If `n = "899 998"` the function should `return "900009"` (returned _898898_)
+- If `n = "800 008"` the function should `return "799997"` (returned _801108_)

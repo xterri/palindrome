@@ -7,6 +7,7 @@ it("should return next highest palindrome, '101' when given 100", () => {
     expect(addPalindrome("100")).toEqual("101")
 });
 
+
 // minusPalindrome Tests
 it("should return next lowest palindrome '121' when given 123", () => {
     expect(minusPalindrome("123")).toEqual("121")
@@ -15,6 +16,7 @@ it("should return next lowest palindrome '121' when given 123", () => {
 it("should return next lowest palindrome '88' when given 98", () => {
     expect(minusPalindrome("98")).toEqual("88")
 });
+
 
 // checkPalindrome Tests
 it("should return true when given the number 1221", () => {
