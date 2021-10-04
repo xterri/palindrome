@@ -1,3 +1,5 @@
+const { checkIsNumber } = require('./checkIsNumber');
+
 it("should return 'error' when given the number 1.23", () => {
     expect(checkIsNumber("1.23")).toEqual("Error: Value contains a decimal point")
 });
@@ -57,24 +59,3 @@ it("should return '9007199254740991' when given the number Number.MAX_SAFE_INTEG
 it("should return 'null' when given the number Number.MIN_SAFE_INTEGER + 1", () => {
     expect(checkIsNumber(Number.MIN_SAFE_INTEGER + 1)).toEqual(null)
 });
-
-// Check that string n is an integer
-function checkIsNumber(n) {
-    // Account for negative values here
-    if (n < 0) return null;
-    // account for max/min safe integer, return error
-    if (n > Number.MAX_SAFE_INTEGER) return "Error: Value exceeds MAX/MIN integer";
-    // Convert to string if number is entered
-    if (typeof n === 'number') n = n.toString();
-    // Check if there is a decimal point    
-    if (n.includes('.')) return "Error: Value contains a decimal point";
-    // Check for '+' at n[0]; if so, remove '+'
-    if (n[0] === '+') n = n.substring(1);
-    // Remove ',' and whitespaces
-    n = n.replace(/[\s\,]/g,'');
-
-    // Check if only digits are left in the string, returns null if characters found
-    if (!n.match(/^\d+$/)) return "Error: Value contains characters / symbols"; 
-
-    return n;
-}

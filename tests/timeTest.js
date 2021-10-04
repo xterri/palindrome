@@ -1,44 +1,21 @@
 const { palindrome } = require('../helpers/palindrome');
 
+const prompt = require('prompt-sync')();
+
+const nbr = prompt('Enter a number: ');
+
+
 let i = 10;
-console.log(palindrome(1234567890123456));
+console.log(`Palindrome 1 Results: ${palindrome(nbr)}`);
+console.log(`Palindrome 2 Results: ${palindrome(nbr, 'b')}\n`);
 
 while (i--) {
-    console.time('palindrome test');
-    palindrome(1234567890123456);
-    console.timeEnd('palindrome test');
+    console.time('1. palindrome1');
+    palindrome(nbr);
+    console.timeEnd('1. palindrome1');
 
+    console.time('2. palindrome2');
+    palindrome(nbr, 'b');
+    console.timeEnd('2. palindrome2');
+    console.log('\n')
 }
-
-// new method +/-1 
-/*
-palindrome test: 0.436ms
-palindrome test: 0.13ms
-palindrome test: 0.055ms
-palindrome test: 0.641ms
-palindrome test: 0.05ms
-palindrome test: 0.053ms
-palindrome test: 0.051ms
-palindrome test: 0.049ms
-palindrome test: 0.057ms
-palindrome test: 0.051ms
----
-Time Average = 0.1573ms
-*/
-
-
-// old method +/- 10 ** mid
-/*
-palindrome test: 0.443ms
-palindrome test: 0.134ms
-palindrome test: 0.056ms
-palindrome test: 0.052ms
-palindrome test: 0.618ms
-palindrome test: 0.059ms
-palindrome test: 0.053ms
-palindrome test: 0.061ms
-palindrome test: 0.05ms
-palindrome test: 0.049ms
----
-Time Average = 0.1575ms
-*/

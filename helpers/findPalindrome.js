@@ -43,5 +43,46 @@ function checkPalindrome(nbr) {
 module.exports = {
     addPalindrome,
     minusPalindrome,
-    checkPalindrome
+    checkPalindrome,
+    bAddPalindrome,
+    bMinusPalindrome
+}
+
+// OPTION B ALGORITHM
+function bAddPalindrome(nbr) {
+    if (nbr > Number.MAX_SAFE_INTEGER) return null;
+
+    const length = nbr.length;
+    const mid = Math.floor(length / 2);
+    let newNbr = parseInt(nbr);
+
+    for (let i = 0; i < mid; i++) {
+        let headNumber = parseInt(nbr[i]), endNumber = parseInt(nbr[length - i - 1]);
+        if (headNumber !== endNumber) {
+            if (headNumber < endNumber) headNumber += 10
+            newNbr = (newNbr + (headNumber - endNumber) * (10 ** i)).toString();
+            if (checkPalindrome(newNbr)) return newNbr;
+            return addPalindrome(newNbr);
+        }
+    }
+    return nbr;
+}
+
+function bMinusPalindrome(nbr) {
+    if (nbr < 0) return null;
+
+    const length = nbr.length;
+    const mid = Math.floor(length / 2);
+    let newNbr = parseInt(nbr);
+
+    for (let i = 0; i < mid; i++) {
+        let headNumber = parseInt(nbr[i]), endNumber = parseInt(nbr[length - i - 1]);
+        if (headNumber !== endNumber) {
+            if (headNumber > endNumber) endNumber += 10
+            newNbr = (newNbr + (headNumber - endNumber) * (10 ** i)).toString();
+            if (checkPalindrome(newNbr)) return newNbr;
+            return minusPalindrome(newNbr);
+        }
+    }
+    return nbr;
 }
