@@ -12,10 +12,10 @@ function testUpperPalindrome(nbr) {
         let newNbr = parseInt(nbr);
     
         for (let i = 0; i < mid; i++) {
-            let headNumber = parseInt(nbr[i]), endNumber = parseInt(nbr[length - i - 1]);
-            if (headNumber !== endNumber) {
-                if (headNumber < endNumber) headNumber += 10
-                newNbr = (newNbr + (headNumber - endNumber) * (10 ** i)).toString();
+            let headNumber = parseInt(nbr[i]), tailNumber = parseInt(nbr[length - i - 1]);
+            if (headNumber !== tailNumber) {
+                if (headNumber < tailNumber) headNumber += 10
+                newNbr = (newNbr + (headNumber - tailNumber) * (10 ** i)).toString();
                 if (checkPalindrome(newNbr)) return newNbr;
                 return testUpperPalindrome(newNbr);
             }
@@ -35,10 +35,10 @@ function testLowerPalindrome(nbr) {
         let newNbr = parseInt(nbr);
     
         for (let i = 0; i < mid; i++) {
-            let headNumber = parseInt(nbr[i]), endNumber = parseInt(nbr[length - i - 1]);
-            if (headNumber !== endNumber) {
-                if (headNumber > endNumber) endNumber += 10
-                newNbr = (newNbr + (headNumber - endNumber) * (10 ** i)).toString();
+            let headNumber = parseInt(nbr[i]), tailNumber = parseInt(nbr[length - i - 1]);
+            if (headNumber !== tailNumber) {
+                if (headNumber > tailNumber) tailNumber += 10
+                newNbr = (newNbr + (headNumber - tailNumber) * (10 ** i)).toString();
                 if (checkPalindrome(newNbr)) return newNbr;
                 return testLowerPalindrome(newNbr);
             }
