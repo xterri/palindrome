@@ -4,7 +4,6 @@ const prompt = require('prompt-sync')();
 
 const nbr = prompt('Enter a number: ');
 
-
 let i = 10;
 console.log(`Palindrome 1 Results: ${palindrome(nbr)}`);
 console.log(`Palindrome 2 Results: ${palindrome(nbr, 'b')}\n`);

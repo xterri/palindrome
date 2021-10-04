@@ -50,4 +50,4 @@ example:
 
 ### Issues
 - How to handle commas if _n_ is using them in a non-standard way (ex. "12,34567,89") or if user is using commas as a decimal separator (ex. 1,23)?
-- ~What should happen if a positive value produces an 'exponent' as it's number? (ex. 10e5)~ Accounting for MAX_SAFE_INTEGER
+- ~What should happen if a positive value produces an 'exponent' as it's number? (ex. 10e5)~

@@ -170,3 +170,11 @@ it("should return 999 when given the number 1001", () => {
 it("should return 9999 when given the number 10001", () => {
     expect(palindrome("10001")).toEqual('9999')
 }); 
+
+it("should return 418323814 when given the number 418324165", () => {
+    expect(palindrome("418324165")).toEqual('418323814')
+}); 
+
+it("should return 65432223456 when given the number 65432189732", () => {
+    expect(palindrome("65432189732")).toEqual('65432223456')
+}); 

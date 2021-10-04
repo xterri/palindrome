@@ -3,30 +3,30 @@ const { palindrome } = require('./palindrome.js');
 // FAILED TESTS
 /*
 it("should return 9 when given the number 10", () => {
-    expect(palindrome("10", 'b', 'b')).toEqual("9")
+    expect(palindrome("10", 'b')).toEqual("9")
 });
 
 it("should return 9 when given the number 11", () => {
-    expect(palindrome("11", 'b', 'b')).toEqual("9")
+    expect(palindrome("11", 'b')).toEqual("9")
 });
 
 it("should return 99 when given the number 100", () => {
-    expect(palindrome("100", 'b', 'b')).toEqual('99')
+    expect(palindrome("100", 'b')).toEqual('99')
 });
 
 it("should return 999 when given the number 1001", () => {
-    expect(palindrome("1001", 'b', 'b')).toEqual('999')
+    expect(palindrome("1001", 'b')).toEqual('999')
 }); 
 
 it("should return 9999 when given the number 10001", () => {
-    expect(palindrome("10001", 'b', 'b')).toEqual('9999')
+    expect(palindrome("10001", 'b')).toEqual('9999')
 }); 
 */
 
 
 // Tests for Invalid Inputs (characters, symbols, decimals, negatives)
 it("should return error when given the number 1.23", () => {
-    expect(palindrome("1.23", 'b', 'b')).toEqual("Error: Value contains a decimal point")
+    expect(palindrome("1.23", 'b')).toEqual("Error: Value contains a decimal point")
 });
 
 it("should return error when given the number 1a2e3b4", () => {
