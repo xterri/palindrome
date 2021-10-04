@@ -3,7 +3,8 @@
 */
 
 const { checkIsNumber } = require('./checkIsNumber');
-const { addPalindrome,
+const { 
+    addPalindrome,
     minusPalindrome, 
     checkPalindrome,
     bAddPalindrome,

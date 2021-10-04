@@ -11,6 +11,7 @@
   },
   "scripts": {
     "test": "jest",
+    "time-test": "node ./tests/timeTest.js",
     "start": "node index.js"
   },
   "author": "",
