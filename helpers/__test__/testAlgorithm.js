@@ -1,8 +1,10 @@
-/*
-** Find next highest and lowest Palindrome by adding/subtracting index A to index B
-*/
 const { checkPalindrome } = require('../findPalindrome');
 
+/*
+ * Finds the next highest integer palindrome from the given value
+ *
+ * @param {String} nbr
+*/
 function testUpperPalindrome(nbr) {
     try {
         if (nbr > Number.MAX_SAFE_INTEGER) return null;
@@ -26,6 +28,11 @@ function testUpperPalindrome(nbr) {
     }
 }
 
+/*
+ * Finds the next lowest integer palindrome from the given value
+ *
+ * @param {String} nbr
+*/
 function testLowerPalindrome(nbr) {
     try {
         if (nbr < 0) return null;

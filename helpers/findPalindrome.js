@@ -1,5 +1,5 @@
 /*
- * Find the next highest integer palindrome from the given value
+ * Finds the next highest integer palindrome from the given value
  *
  * @param {String} nbr
 */
@@ -24,8 +24,8 @@ function findUpperPalindrome(nbr) {
 }
 
 /*
- * Find the next lowest integer palindrome from the given value
- *
+ * Finds the next lowest integer palindrome from the given value
+ * 
  * @param {String} nbr
 */
 function findLowerPalindrome(nbr) {
