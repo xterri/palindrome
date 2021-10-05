@@ -1,5 +1,7 @@
 /*
-** Check the string n is a valid number and integer
+ * Check the string n is a valid number and integer
+ *
+ * @param {String} n
 */
 
 function checkIsNumber(n) {

@@ -1,9 +1,8 @@
 /*
-** Functions to check & find the next palindrome from given number
-** Search by adding and subtracting 1x to number
-** Check if new number is a palindrome, if so return the number, else continue
+ * Find the next highest integer palindrome from the given value
+ *
+ * @param {String} nbr
 */
-
 function findUpperPalindrome(nbr) {
     try {
         if (nbr > Number.MAX_SAFE_INTEGER) return null;
@@ -24,6 +23,11 @@ function findUpperPalindrome(nbr) {
     }
 }
 
+/*
+ * Find the next lowest integer palindrome from the given value
+ *
+ * @param {String} nbr
+*/
 function findLowerPalindrome(nbr) {
     try {
         if (nbr < 0) return null;
@@ -44,6 +48,11 @@ function findLowerPalindrome(nbr) {
     }
 }
 
+/*
+ * Check if the given value is a palindrome
+ *
+ * @param {String} nbr
+*/
 function checkPalindrome(nbr) {
     try {
         return nbr === nbr.split('').reverse().join('');

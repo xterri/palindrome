@@ -1,7 +1,3 @@
-/*
-** Finds the next closest integer palindrome from string n
-*/
-
 const { checkIsNumber } = require('./checkIsNumber');
 const { 
     findUpperPalindrome,
@@ -11,6 +7,12 @@ const {
  
 const { testUpperPalindrome, testLowerPalindrome } = require('./__test__/testAlgorithm');
 
+/*
+ * Finds the next highest/lowest integer palindrome closest to n
+ *
+ * @param {String} n
+ * @param {String} option - Select algorithm to run; default set to 'a'
+*/
 function palindrome(n, option = 'a') {
     try {
         const numberString = checkIsNumber(n);
