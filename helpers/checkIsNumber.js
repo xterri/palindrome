@@ -4,18 +4,18 @@
  * @param {String} n
 */
 
-function checkIsNumber(n) {
+function checkIsNumber(nbr) {
     try {
-        if (n < 0) return null;
-        if (n > Number.MAX_SAFE_INTEGER) return "Error: Value exceeds MAX/MIN integer";
-        if (typeof n === 'number') n = n.toString();
-        if (n.includes('.')) return "Error: Value contains a decimal point";
-        if (n[0] === '+') n = n.substring(1);
-        n = n.replace(/[\s\,]/g,'');
+        if (nbr < 0) return null;
+        if (nbr > Number.MAX_SAFE_INTEGER) return "Error: Value exceeds MAX/MIN integer";
+        if (typeof nbr === 'number') nbr = nbr.toString();
+        if (nbr.includes('.')) return "Error: Value contains a decimal point";
+        if (nbr[0] === '+') nbr = nbr.substring(1);
+        nbr = nbr.replace(/[\s\,]/g,'');
 
-        if (!n.match(/^\d+$/)) return "Error: Value contains characters / symbols"; 
+        if (!nbr.match(/^\d+$/)) return "Error: Value contains characters / symbols"; 
 
-        return n;
+        return nbr;
     } catch (error) {
         console.error(error);
     }
