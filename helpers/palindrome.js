@@ -30,7 +30,8 @@ function palindrome(n, option = 'a') {
                 highPalindrome = findUpperPalindrome(addNewNumber.toString());
                 lowPalindrome = findLowerPalindrome(minusNewNumber.toString());  
             } else {
-                highPalindrome = testUpperPalindrome(addNewNumber.toString());
+                highPalindrome = testUpperPalindrome(addNewNumber.toString());                
+                if (minusNewNumber && minusNewNumber % 10 === 0) minusNewNumber -= 1;
                 lowPalindrome = testLowerPalindrome(minusNewNumber.toString());
             }
     

@@ -1,28 +1,9 @@
 const { palindrome } = require('../palindrome.js');
 
 // FAILED TESTS
-/*
-it("should return 9 when given the number 10", () => {
-    expect(palindrome("10", 'b')).toEqual("9")
+it("should return 0 when given the number 1", () => {
+    expect(palindrome("1", 'b')).toEqual("0")
 });
-
-it("should return 9 when given the number 11", () => {
-    expect(palindrome("11", 'b')).toEqual("9")
-});
-
-it("should return 99 when given the number 100", () => {
-    expect(palindrome("100", 'b')).toEqual('99')
-});
-
-it("should return 999 when given the number 1001", () => {
-    expect(palindrome("1001", 'b')).toEqual('999')
-}); 
-
-it("should return 9999 when given the number 10001", () => {
-    expect(palindrome("10001", 'b')).toEqual('9999')
-});
-*/ 
-
 
 
 // Tests for Invalid Inputs (characters, symbols, decimals, negatives)
@@ -57,26 +38,25 @@ it("should return '9007199229917009' when given the number Number.MAX_SAFE_INTEG
 
 
 // Tests for single digits, 10 & 11
-
 it("should return 1 when given the number 0", () => {
     expect(palindrome("0", 'b')).toEqual("1")
 });
 
-it("should return 0 when given the number 1", () => {
-    expect(palindrome("1", 'b')).toEqual("0")
-});
+// it("should return 0 when given the number 1", () => {
+//     expect(palindrome("1", 'b')).toEqual("0")
+// });
 
 it("should return 4 when given the number 5", () => {
     expect(palindrome("5", 'b')).toEqual("4")
 });
 
-// it("should return 9 when given the number 10", () => {
-//     expect(palindrome("10", 'b')).toEqual("9")
-// });
+it("should return 9 when given the number 10", () => {
+    expect(palindrome("10", 'b')).toEqual("9")
+});
 
-// it("should return 9 when given the number 11", () => {
-//     expect(palindrome("11", 'b')).toEqual("9")
-// });
+it("should return 9 when given the number 11", () => {
+    expect(palindrome("11", 'b')).toEqual("9")
+});
 
 
 
@@ -124,9 +104,9 @@ it("should return 77 when given the number 88", () => {
     expect(palindrome("88", 'b')).toEqual('77')
 });
 
-// it("should return 99 when given the number 100", () => {
-//     expect(palindrome("100", 'b')).toEqual('99')
-// });
+it("should return 99 when given the number 100", () => {
+    expect(palindrome("100", 'b')).toEqual('99')
+});
 
 it("should return 121 when given the number 118", () => {
     expect(palindrome("118", 'b')).toEqual('121')
@@ -188,10 +168,10 @@ it("should return 898 when given the number 900", () => {
     expect(palindrome("900", 'b')).toEqual('898')
 }); 
 
-// it("should return 999 when given the number 1001", () => {
-//     expect(palindrome("1001", 'b')).toEqual('999')
-// }); 
+it("should return 999 when given the number 1001", () => {
+    expect(palindrome("1001", 'b')).toEqual('999')
+}); 
 
-// it("should return 9999 when given the number 10001", () => {
-//     expect(palindrome("10001", 'b')).toEqual('9999')
-// }); 
+it("should return 9999 when given the number 10001", () => {
+    expect(palindrome("10001", 'b')).toEqual('9999')
+}); 
