@@ -1,11 +1,11 @@
-const { checkPalindrome } = require('../findPalindrome');
+const { checkPalindrome } = require('./checkPalindrome');
 
 /*
  * Finds the next highest integer palindrome from the given value
  *
  * @param {String} nbr
 */
-function testUpperPalindrome(nbr) {
+function findUpperPalindromeB(nbr) {
     try {
         if (nbr > Number.MAX_SAFE_INTEGER) return null;
 
@@ -19,7 +19,7 @@ function testUpperPalindrome(nbr) {
                 if (headNumber < tailNumber) headNumber += 10
                 newNbr = (newNbr + (headNumber - tailNumber) * (10 ** i)).toString();
                 if (checkPalindrome(newNbr)) return newNbr;
-                return testUpperPalindrome(newNbr);
+                return findUpperPalindromeB(newNbr);
             }
         }
         return nbr;
@@ -33,7 +33,7 @@ function testUpperPalindrome(nbr) {
  *
  * @param {String} nbr
 */
-function testLowerPalindrome(nbr) {
+function findLowerPalindromeB(nbr) {
     try {
         if (nbr < 0) return null;
 
@@ -47,7 +47,7 @@ function testLowerPalindrome(nbr) {
                 if (headNumber > tailNumber) tailNumber += 10
                 newNbr = (newNbr + (headNumber - tailNumber) * (10 ** i)).toString();
                 if (checkPalindrome(newNbr)) return newNbr;
-                return testLowerPalindrome(newNbr);
+                return findLowerPalindromeB(newNbr);
             }
         }
         return nbr;
@@ -57,6 +57,6 @@ function testLowerPalindrome(nbr) {
 }
 
 module.exports = {
-    testUpperPalindrome,
-    testLowerPalindrome
+    findUpperPalindromeB,
+    findLowerPalindromeB
 }

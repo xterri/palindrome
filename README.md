@@ -53,6 +53,8 @@ Two methods developed to find the most optimized and accurate search for the nex
 
 ### Process / TODO
 - Combine findUpperPalindrome and findLowerPalindrome into one function for recursion?
+- Add in "throw()" to handle errors in try/catch clauses; separate errors from main code
+- Try implementing async/await to code where it test palindrome A/B
 - ~Find distance between next highest and lowest palindrome to _n_~
 - ~Apply try/catch clauses~
 - ~Fix failed tests, adjusted values exceeding other palindromes~

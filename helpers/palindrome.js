@@ -1,11 +1,7 @@
 const { checkIsNumber } = require('./checkIsNumber');
-const { 
-    findUpperPalindrome,
-    findLowerPalindrome, 
-    checkPalindrome,
- } = require('./findPalindrome');
- 
-const { testUpperPalindrome, testLowerPalindrome } = require('./__test__/testAlgorithm');
+const { checkPalindrome } = require('./checkPalindrome');
+const { findUpperPalindromeA, findLowerPalindromeA } = require('./findPalindromeA');
+const { findUpperPalindromeB, findLowerPalindromeB } = require('./findPalindromeB');
 
 /*
  * Finds the next highest/lowest integer palindrome closest to n
@@ -27,12 +23,12 @@ function palindrome(n, option = 'a') {
             }
     
             if (option === 'a') {
-                highPalindrome = findUpperPalindrome(addNewNumber.toString());
-                lowPalindrome = findLowerPalindrome(minusNewNumber.toString());  
+                highPalindrome = findUpperPalindromeA(addNewNumber.toString());
+                lowPalindrome = findLowerPalindromeA(minusNewNumber.toString());  
             } else {
-                highPalindrome = testUpperPalindrome(addNewNumber.toString());                
+                highPalindrome = findUpperPalindromeB(addNewNumber.toString());                
                 if (minusNewNumber && minusNewNumber % 10 === 0) minusNewNumber -= 1;
-                lowPalindrome = testLowerPalindrome(minusNewNumber.toString());
+                lowPalindrome = findLowerPalindromeB(minusNewNumber.toString());
             }
     
             if (lowPalindrome && highPalindrome) 
