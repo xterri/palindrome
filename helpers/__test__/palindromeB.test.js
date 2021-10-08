@@ -1,9 +1,7 @@
 const { palindrome } = require('../palindrome.js');
 
 // FAILED TESTS
-it("should return 0 when given the number 1", () => {
-    expect(palindrome("1", 'b')).toEqual("0")
-});
+
 
 
 // Tests for Invalid Inputs (characters, symbols, decimals, negatives)
@@ -42,9 +40,9 @@ it("should return 1 when given the number 0", () => {
     expect(palindrome("0", 'b')).toEqual("1")
 });
 
-// it("should return 0 when given the number 1", () => {
-//     expect(palindrome("1", 'b')).toEqual("0")
-// });
+it("should return 0 when given the number 1", () => {
+    expect(palindrome("1", 'b')).toEqual("0")
+});
 
 it("should return 4 when given the number 5", () => {
     expect(palindrome("5", 'b')).toEqual("4")
